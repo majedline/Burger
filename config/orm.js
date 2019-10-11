@@ -15,11 +15,11 @@ const orm = {
     },
 
     insertOne: function (obj) {
-
+        return null;
     },
 
     updateOne: function (obj) {
-
+        return null;
     }
 };
 
