@@ -11,7 +11,6 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
             acb(result);
         });
     },
