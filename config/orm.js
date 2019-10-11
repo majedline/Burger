@@ -1,26 +1,20 @@
 const connection = require("./connection.js");
 
 
-const orm = {
-    selectAll: function () {
-        const queryString = "SELECT id, burger_name, devoured FROM burgers;"
 
-        // err is the error, result is the result set, acb is the anonymous call back function
-        connection.query(queryString, (err, result, acb) => {
+
+
+var orm = {
+    selectAll: function (acb) {
+        const queryString = "SELECT id, burger_name, devoured FROM burgers;"
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
+            console.log(result);
             acb(result);
         });
     },
-
-    insertOne: function (obj) {
-        return null;
-    },
-
-    updateOne: function (obj) {
-        return null;
-    }
 };
 
 module.exports = orm;
