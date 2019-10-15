@@ -1,26 +1,32 @@
 $(function () {
 
-    // $(".change-sleep").on("click", function (event) {
-    //     var id = $(this).data("id");
-    //     var newSleep = $(this).data("newsleep");
+    // function call to devour a burger based on this.id
+    $(".undevoured-burger-item").on("click", function (event) {
+        console.log(this);
+        const id = parseInt($(this).attr("id"));
 
-    //     var newSleepState = {
-    //         sleepy: newSleep
-    //     };
+        var newBurgerDevouredStat = {
+            "id": id,
+            "devoured": 1
+        };
 
-    //     // Send the PUT request.
-    //     $.ajax("/api/cats/" + id, {
-    //         type: "PUT",
-    //         data: newSleepState
-    //     }).then(
-    //         function () {
-    //             console.log("changed sleep to", newSleep);
-    //             // Reload the page to get the updated list
-    //             location.reload();
-    //         }
-    //     );
-    // });
+        console.log(newBurgerDevouredStat);
 
+        // Send the PUT request.
+        $.ajax("/api/eat-burger", {
+            type: "POST",
+            data: newBurgerDevouredStat
+        }).then(
+            function () {
+                // console.log("changed sleep to", newSleep);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+
+    // function call to create a burger
     $("#create-burger-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -42,19 +48,4 @@ $(function () {
             }
         );
     });
-
-    // $(".delete-cat").on("click", function (event) {
-    //     var id = $(this).data("id");
-
-    //     // Send the DELETE request.
-    //     $.ajax("/api/cats/" + id, {
-    //         type: "DELETE"
-    //     }).then(
-    //         function () {
-    //             console.log("deleted cat", id);
-    //             // Reload the page to get the updated list
-    //             location.reload();
-    //         }
-    //     );
-    // });
 });
