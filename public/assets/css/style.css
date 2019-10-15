@@ -1,12 +1,54 @@
-body{
-    background-color: #000055;
+.body{
+    background-color: #9797fd;
     color: white;
 }
-
 
 .header{
     text-align: center;
     width: 100%;
     margin: 20px;
     border:2;
+}
+
+.main-area{
+    background-color: #000055;
+    color: blue;
+
+}
+
+.header-footer-h{
+    color:white;
+}
+
+.burger-img{
+    padding:10px;
+}
+.row-style{
+    border-color: white;
+    border-width: 20px;
+    text-align: center;
+}
+
+/* burger to eat section */
+.burger-to-eat-textbox{
+    padding-top: 10px;
+}
+
+.burger-to-eat-li{
+    width: 110%;
+    margin-top: 2px;
+}
+
+.eat-button{
+    margin-left: 70px;
+}
+
+/* eaten burger section */
+.burger-eaten-textbox{
+    padding-top: 10px;
+}
+
+.burger-eaten-li{
+    margin-left: -25px;   
+    margin-top: 2px; 
 }
