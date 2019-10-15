@@ -1,9 +1,5 @@
 const connection = require("./connection.js");
 
-
-
-
-
 var orm = {
     selectAll: function (acb) {
         const queryString = "SELECT id, burger_name, devoured FROM burgers;"

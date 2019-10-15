@@ -1,18 +1,21 @@
-var burger = require("../models/burger.js");
-
-var express = require("express");
-
-var router = express.Router();
+const burger = require("../models/burger.js");
+const express = require("express");
+const router = express.Router();
 
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        var hbsObject = {
-            burger: data
+
+        const unDevouredList = data.filter(burger => (burger.devoured === 0));
+        const devouredList = data.filter(burger => (burger.devoured === 1));
+        
+        const burgerList = {
+            "unDevouredList": unDevouredList,
+            "devouredList": devouredList
         };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+        console.log(burgerList);
+        res.render("index", burgerList);
     });
 });
 

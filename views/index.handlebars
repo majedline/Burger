@@ -1,66 +1,29 @@
-{{!-- <div class="container center-align">
-  <div class="row">
-    <div class="col s12">
-
-      <div class="row ">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="./assets/img/burger1.jpg">
-              <span class="card-title blue-text text-darken-2">Burger Site!</span>
-            </div>
-            <div class="card-content blue-text text-darken-2">
-              <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action blue-text text-darken-2">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col s6">6-columns (one-half)</div>
-    <div class="col s6">6-columns (one-half)</div>
-
-  </div>
-</div> --}}
-
-
-
-
-
 <div class="container main-area">
   <div class="row row-style">
     <div class="col-12 header-footer-h">
-      <h1>Eat-da-burger</h1>
+      <h1>Eat-da-burger
+
+      </h1>
     </div>
     <div class="col-3">
       <ul class="list-group">
         {{!-- burgers to eat dynamic section --}}
-        <li class="list-group-item burger-to-eat-li">
-          <div class="row row-style">
-            <div class="col-6">
-              <span type="text" name="" id="" class="burger-to-eat-textbox">asdfasdfasfashksad sjakdf skaljflhas
-                kjdfhskdjhfdfasdfas</span>>
-            </div>
-            <div class="col-6">
-              <button type="button" class="btn btn-warning eat-button">eat</button>
-            </div>
-          </div>
-        </li>
+
+        {{#each unDevouredList}}
 
         <li class="list-group-item burger-to-eat-li">
           <div class="row row-style">
             <div class="col-6">
-              <span type="text" name="" id="" class="burger-to-eat-textbox">asdfasdfasfashksad sjakdf skaljflhas
-                kjdfhskdjhfdfasdfas</span>
+              <span name="{{this.burger_name}}" id="unDevoured-span-{{this.id}}"
+                class="burger-to-eat-textbox">{{this.burger_name}}</span>
             </div>
             <div class="col-6">
-              <button type="button" class="btn btn-warning eat-button">eat</button>
+              <button type="button" id="unDevoured-button-{{this.id}}" class="btn btn-warning eat-button">eat</button>
             </div>
           </div>
         </li>
+        {{/each}}
+
         {{!--end of buger to eat dynamic section  --}}
       </ul>
     </div>
@@ -81,19 +44,19 @@
     <div class="col-3">
       <ul class="list-group">
         {{!-- eaten burgers dynamic section --}}
+        {{#each devouredList}}
         <li class="list-group-item burger-eaten-li">
-          <span type="text" name="" id="" class="burger-to-eat-textbox">sadfsadfk sadfj hlskdfjhas kjdfh aslkdjfh
-            alsjkdfhjkasd fhkljsadh </span>
+          <span name="{{this.burger_name}}" id="devoured-span-{{this.id}}"
+            class="burger-to-eat-textbox">{{this.burger_name}}</span>
         </li>
+        {{/each}}
 
-        <li class="list-group-item burger-eaten-li">
-          <span type="text" name="" id="" class="burger-to-eat-textbox">sadfsadfk sadfj hlskdfjhas kjdfh aslkdjfh
-            alsjkdfhjkasd fhkljsadh </span>
-        </li>
         {{!-- end of eaten burger dynamix section --}}
       </ul>
     </div>
-    <div class="col-12"><h8> - </h8></div>
+    <div class="col-12">
+      <h8> - </h8>
+    </div>
   </div>
 </div>
 
