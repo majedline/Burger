@@ -9,16 +9,18 @@
       <ul class="list-group">
         {{!-- burgers to eat dynamic section --}}
 
-        {{#each unDevouredList}}
+        {{#each undevouredList}}
 
         <li class="list-group-item burger-to-eat-li">
           <div class="row row-style">
             <div class="col-6">
-              <span name="{{this.burger_name}}" id="unDevoured-span-{{this.id}}"
+              <span name="{{this.burger_name}}" id="undevoured-span-{{this.id}}"
                 class="burger-to-eat-textbox">{{this.burger_name}}</span>
+
             </div>
             <div class="col-6">
-              <button type="button" id="unDevoured-button-{{this.id}}" class="btn btn-warning eat-button">eat</button>
+              <button type="button" id="undevoured-button-{{this.id}}" class="btn btn-warning">eat</button>
+
             </div>
           </div>
         </li>
@@ -36,8 +38,16 @@
             </div>
           </h5>
           <p class="card-text text-primary">Type the burger name that you desire to add to eat.</p>
-          <p class="card-text text-primary"> <input type="text" name="" id=""></p>
-          <a href="#" class="btn btn-primary">Add burger</a>
+
+          <form>
+            <p class="card-text text-primary">
+              <input type="text" id="new-burger-name">
+            </p>
+            <button class="btn-primary" type="submit">Add burger</button>
+
+            {{!-- <a href="#" class="btn btn-primary">Add burger</a> --}}
+          </form>
+
         </div>
       </div>
     </div>
@@ -50,7 +60,6 @@
             class="burger-to-eat-textbox">{{this.burger_name}}</span>
         </li>
         {{/each}}
-
         {{!-- end of eaten burger dynamix section --}}
       </ul>
     </div>
@@ -61,23 +70,6 @@
 </div>
 
 {{!-- 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
 
 <h2>Add a Cat</h2>
 <form class="create-form">

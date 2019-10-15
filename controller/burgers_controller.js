@@ -7,11 +7,11 @@ const router = express.Router();
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
 
-        const unDevouredList = data.filter(burger => (burger.devoured === 0));
+        const undevouredList = data.filter(burger => (burger.devoured === 0));
         const devouredList = data.filter(burger => (burger.devoured === 1));
-        
+
         const burgerList = {
-            "unDevouredList": unDevouredList,
+            "undevouredList": undevouredList,
             "devouredList": devouredList
         };
         console.log(burgerList);
