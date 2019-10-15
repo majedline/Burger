@@ -7,7 +7,7 @@
     </div>
     <div class="col-3">
       <ul class="list-group">
-        {{!-- burgers to eat dynamic section --}}
+        {{!--******************************** burgers to eat dynamic section ********************************--}}
 
         {{#each undevouredList}}
 
@@ -26,7 +26,7 @@
         </li>
         {{/each}}
 
-        {{!--end of buger to eat dynamic section  --}}
+        {{!-********************************-end of buger to eat dynamic section********************************  --}}
       </ul>
     </div>
     <div class="col-6">
@@ -39,28 +39,28 @@
           </h5>
           <p class="card-text text-primary">Type the burger name that you desire to add to eat.</p>
 
-          <form>
+          {{!--******************************** Start of burger form ********************************--}}
+          <form id="create-burger-form">
             <p class="card-text text-primary">
               <input type="text" id="new-burger-name">
             </p>
-            <button class="btn-primary" type="submit">Add burger</button>
-
-            {{!-- <a href="#" class="btn btn-primary">Add burger</a> --}}
+            <button class="btn btn-primary" type="submit">Add burger</button>
           </form>
+          {{!--******************************** End of burger form ******************************** --}}
 
         </div>
       </div>
     </div>
     <div class="col-3">
       <ul class="list-group">
-        {{!-- eaten burgers dynamic section --}}
+        {{!-- ********************************eaten burgers dynamic section ********************************--}}
         {{#each devouredList}}
         <li class="list-group-item burger-eaten-li">
           <span name="{{this.burger_name}}" id="devoured-span-{{this.id}}"
             class="burger-to-eat-textbox">{{this.burger_name}}</span>
         </li>
         {{/each}}
-        {{!-- end of eaten burger dynamix section --}}
+        {{!--******************************** end of eaten burger dynamix section ********************************--}}
       </ul>
     </div>
     <div class="col-12">
