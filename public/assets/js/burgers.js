@@ -12,13 +12,11 @@ $(function () {
 
         console.log(newBurgerDevouredStat);
 
-        // Send the PUT request.
         $.ajax("/api/eat-burger", {
             type: "POST",
             data: newBurgerDevouredStat
         }).then(
             function () {
-                // console.log("changed sleep to", newSleep);
                 // Reload the page to get the updated list
                 location.reload();
             }
